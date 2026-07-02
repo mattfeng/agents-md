@@ -28,6 +28,7 @@ Available bundled templates:
 
 - `base`
 - `python`
+- `sqlalchemy-alembic`
 - `nextjs`
 - `deep-learning`
 - `jax-equinox`
