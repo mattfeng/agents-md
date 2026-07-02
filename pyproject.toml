@@ -1,0 +1,20 @@
+[project]
+name = "agents-md-templates"
+version = "0.1.0"
+description = "Generate and update AGENTS.md files from reusable templates."
+readme = "README.md"
+requires-python = ">=3.11"
+dependencies = []
+
+[project.scripts]
+agents-md = "agents_md_templates.cli:main"
+
+[tool.setuptools]
+package-dir = {"" = "src"}
+
+[tool.setuptools.packages.find]
+where = ["src"]
+
+[tool.setuptools.package-data]
+agents_md_templates = ["templates/*.md"]
+
