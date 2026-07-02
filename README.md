@@ -24,6 +24,15 @@ uvx --from git+https://github.com/mattfeng/agents-md agents-md write --template 
 
 Supplying `--template` skips the prompt. Repeat it for each template you want.
 
+Available bundled templates:
+
+- `base`
+- `deep-learning`
+- `jax-equinox`
+- `nextjs`
+- `python`
+- `pytorch`
+
 List bundled templates:
 
 ```sh
@@ -35,3 +44,10 @@ By default the command asks which templates to include. The base template is sel
 Every write prints the resulting `AGENTS.md` content before saving it.
 
 The generated section is wrapped in markers so rerunning the command updates only the managed block.
+
+Templates are rendered with Jinja2. Bundled templates can use:
+
+- `output_path`: target `AGENTS.md` path
+- `project_dir`: target project directory
+- `selected_templates`: list of selected template names
+- `template_name`: the current template name

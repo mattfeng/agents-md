@@ -1,4 +1,7 @@
-# AGENTS.python.md
+# Python
+
+## Package manager
+- Assume the user is using uv.
 
 ## Instructions
 - Do not run builds or tests.
