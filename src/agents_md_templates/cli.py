@@ -47,11 +47,6 @@ def build_parser() -> argparse.ArgumentParser:
         action="store_true",
         help="replace the entire AGENTS.md file instead of updating the managed block",
     )
-    write_parser.add_argument(
-        "--dry-run",
-        action="store_true",
-        help="print the generated AGENTS.md content without writing it",
-    )
     write_parser.set_defaults(func=write_command)
 
     list_parser = subparsers.add_parser("list", help="list bundled templates")
@@ -80,13 +75,12 @@ def write_command(args: argparse.Namespace) -> int:
         current = output_path.read_text(encoding="utf-8") if output_path.exists() else ""
         next_content = upsert_managed_block(current, generated)
 
-    if args.dry_run:
-        print(next_content, end="")
-        return 0
+    print(next_content, end="")
+    sys.stdout.flush()
 
     project_dir.mkdir(parents=True, exist_ok=True)
     output_path.write_text(next_content, encoding="utf-8")
-    print(f"Wrote {output_path} with templates: {', '.join(selected)}")
+    print(f"\nWrote {output_path} with templates: {', '.join(selected)}", file=sys.stderr)
     return 0
 
 

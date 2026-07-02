@@ -16,12 +16,6 @@ Run against the current directory:
 uvx --from git+https://github.com/mattfeng/agents-md agents-md write
 ```
 
-Preview without writing:
-
-```sh
-uvx --from git+https://github.com/mattfeng/agents-md agents-md write --dry-run
-```
-
 Pick templates explicitly:
 
 ```sh
@@ -37,5 +31,7 @@ uvx --from git+https://github.com/mattfeng/agents-md agents-md list
 ```
 
 By default the command asks which templates to include. The base template is selected by default in the prompt; project-specific templates are only included when the user chooses them.
+
+Every write prints the resulting `AGENTS.md` content before saving it.
 
 The generated section is wrapped in markers so rerunning the command updates only the managed block.
