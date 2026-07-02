@@ -1,4 +1,4 @@
-# AGENTS.md templates
+# Create AGENTS.md
 
 Generate or update `AGENTS.md` files from reusable templates.
 
@@ -7,19 +7,19 @@ Generate or update `AGENTS.md` files from reusable templates.
 Run against the current directory:
 
 ```sh
-uvx --from git+https://github.com/mattfeng/agents-md agents-md
+uvx --from git+https://github.com/mattfeng/agents-md create-agents-md
 ```
 
 Run with a specific target:
 
 ```sh
-uvx --from git+https://github.com/mattfeng/agents-md agents-md --target /path/to/project
+uvx --from git+https://github.com/mattfeng/agents-md create-agents-md --target /path/to/project
 ```
 
 Pick templates explicitly:
 
 ```sh
-uvx --from git+https://github.com/mattfeng/agents-md agents-md --template base --template python
+uvx --from git+https://github.com/mattfeng/agents-md create-agents-md --template base --template python
 ```
 
 Supplying `--template` skips the prompt. Repeat it for each template you want.
@@ -36,7 +36,7 @@ Available bundled templates:
 List bundled templates:
 
 ```sh
-uvx --from git+https://github.com/mattfeng/agents-md agents-md list
+uvx --from git+https://github.com/mattfeng/agents-md create-agents-md list
 ```
 
 By default the command asks which templates to include. The base template is selected by default in the prompt; project-specific templates are only included when the user chooses them.
