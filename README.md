@@ -39,13 +39,13 @@ List bundled templates:
 uvx --from git+https://github.com/mattfeng/agents-md create-agents-md list
 ```
 
-By default the command asks which templates to include. The base template is selected by default in the prompt; project-specific templates are only included when the user chooses them.
+By default the command asks which templates to include. The base template is selected by default the first time; after that, rerunning against the same `AGENTS.md` uses the previous template choices as the prompt defaults. The user can still change any selection at the prompt.
 
 Selected templates are rendered in an internal hierarchy regardless of prompt or `--template` order: general instructions first, then ecosystem templates, domain templates, and framework-specific templates. Templates that are not in the hierarchy are appended alphabetically.
 
 Every run prints the resulting `AGENTS.md` content before saving it.
 
-The generated section is wrapped in markers so rerunning the command updates only the managed block.
+The generated section is wrapped in markers so rerunning the command updates only the managed block. Content outside those markers is preserved.
 
 Templates are rendered with Jinja2. Bundled templates can use:
 
