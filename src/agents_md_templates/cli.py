@@ -18,7 +18,7 @@ BASE_TEMPLATE = "base"
 COMMAND_NAME = "create-agents-md"
 TEMPLATE_HIERARCHY = (
     ("general", (BASE_TEMPLATE,)),
-    ("ecosystem", ("python", "sqlalchemy-alembic", "nextjs")),
+    ("ecosystem", ("python", "fastapi", "sqlalchemy-alembic", "nextjs")),
     ("domain", ("deep-learning",)),
     ("framework", ("jax-equinox", "pytorch")),
 )

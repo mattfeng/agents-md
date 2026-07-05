@@ -28,6 +28,7 @@ Available bundled templates:
 
 - `base`
 - `python`
+- `fastapi`
 - `sqlalchemy-alembic`
 - `nextjs`
 - `deep-learning`
