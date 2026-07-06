@@ -4,7 +4,7 @@
 - This version has breaking changes — APIs, conventions, and file structure may all differ from your training data. Read the relevant guide in `node_modules/next/dist/docs/` before writing any code. Heed deprecation notices.
 
 ## Package manager
-- Assume the user is using Yarn v4.
+- Assume the user is using {% if javascript_package_manager == "yarn" %}Yarn v4{% else %}npm{% endif %}.
 
 ## Instructions
 - Do not try to install any packages on your own. Inform the user what commands to run and then check that the user has done so.

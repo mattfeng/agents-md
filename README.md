@@ -22,7 +22,13 @@ Pick templates explicitly:
 uvx --from git+https://github.com/mattfeng/agents-md create-agents-md --template base --template python
 ```
 
-Supplying `--template` skips the prompt. Repeat it for each template you want.
+Supplying `--template` skips the template-selection prompt. Repeat it for each template you want.
+
+For JavaScript templates, choose the package manager interactively or pass it explicitly:
+
+```sh
+uvx --from git+https://github.com/mattfeng/agents-md create-agents-md --template base --template nextjs --javascript-package-manager npm
+```
 
 Available bundled templates:
 
@@ -43,6 +49,8 @@ uvx --from git+https://github.com/mattfeng/agents-md create-agents-md list
 
 By default the command asks which templates to include. The base template is selected by default the first time; after that, rerunning against the same `AGENTS.md` uses the previous template choices as the prompt defaults. The user can still change any selection at the prompt.
 
+When a JavaScript template is selected, the command also asks whether to use `npm` or `yarn`. Rerunning against the same `AGENTS.md` reuses the previous package manager as the prompt default.
+
 Selected templates are rendered in an internal hierarchy regardless of prompt or `--template` order: general instructions first, then ecosystem templates, domain templates, and framework-specific templates. Templates that are not in the hierarchy are appended alphabetically.
 
 Every run prints the resulting `AGENTS.md` content before saving it.
@@ -54,4 +62,5 @@ Templates are rendered with Jinja2. Bundled templates can use:
 - `output_path`: target `AGENTS.md` path
 - `project_dir`: target project directory
 - `selected_templates`: list of selected template names
+- `javascript_package_manager`: selected JavaScript package manager, either `npm` or `yarn`
 - `template_name`: the current template name
