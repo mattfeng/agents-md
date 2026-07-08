@@ -22,7 +22,7 @@ JAVASCRIPT_TEMPLATES = {"nextjs"}
 DEFAULT_JAVASCRIPT_PACKAGE_MANAGER = "yarn"
 TEMPLATE_HIERARCHY = (
     ("general", (BASE_TEMPLATE,)),
-    ("ecosystem", ("python", "fastapi", "sqlalchemy-alembic", "nextjs")),
+    ("ecosystem", ("python", "fastapi", "sqlalchemy-alembic", "nextjs", "markdown-mdx")),
     ("domain", ("deep-learning",)),
     ("framework", ("jax-equinox", "pytorch")),
 )
