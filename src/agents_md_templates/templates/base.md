@@ -1,5 +1,9 @@
 # Base instructions
 
+## Planning
+- Always prefer to construct general solutions that can be proven to work in all the expected cases, rather than implementing a series of "hacks" or special cases. Always be suspicious when something appears to require special cases.
+- Address problems at the root cause, rather than patching over the symptoms.
+
 ## Files
 - Do not try to remove or edit read-only files and folders.
 
