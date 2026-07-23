@@ -5,6 +5,7 @@
 - Address problems at the root cause, rather than patching over the symptoms.
 
 ## Files
+- Before attempting to remove or modify a file/folder, check for read-only status (e.g. permissions and read-only file systems).
 - Do not try to remove or edit read-only files and folders.
 
 ## Networking
