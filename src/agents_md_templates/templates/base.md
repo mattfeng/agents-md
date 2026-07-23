@@ -5,7 +5,8 @@
 - Address problems at the root cause, rather than patching over the symptoms.
 
 ## Files
-- Before attempting to remove or modify a file/folder, check for read-only status (e.g. permissions and read-only file systems).
+- Before attempting to remove or modify a file/folder, check its file permissions. Furthermore, verify that its containing filesystem is writable: `target="$(readlink -f -- <path>)"; findmnt -no OPTIONS --target "$target"`. If the comma-separated mount options contain ro, treat the filesystem as read-only and do not attempt the edit. Report the limitation instead.
+    - For a file that does not yet exist, run the check against its nearest existing parent directory.
 - Do not try to remove or edit read-only files and folders.
 
 ## Networking
