@@ -18,11 +18,21 @@ TEMPLATE_SUFFIX = ".md"
 BASE_TEMPLATE = "base"
 COMMAND_NAME = "create-agents-md"
 JAVASCRIPT_PACKAGE_MANAGERS = ("npm", "yarn")
-JAVASCRIPT_TEMPLATES = {"nextjs"}
+JAVASCRIPT_TEMPLATES = {"nextjs", "shadcn"}
 DEFAULT_JAVASCRIPT_PACKAGE_MANAGER = "yarn"
 TEMPLATE_HIERARCHY = (
     ("general", (BASE_TEMPLATE,)),
-    ("ecosystem", ("python", "fastapi", "sqlalchemy-alembic", "nextjs", "markdown-mdx")),
+    (
+        "ecosystem",
+        (
+            "python",
+            "fastapi",
+            "sqlalchemy-alembic",
+            "nextjs",
+            "shadcn",
+            "markdown-mdx",
+        ),
+    ),
     ("domain", ("deep-learning",)),
     ("framework", ("jax-equinox", "pytorch")),
 )

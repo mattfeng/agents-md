@@ -37,6 +37,7 @@ Available bundled templates:
 - `fastapi`
 - `sqlalchemy-alembic`
 - `nextjs`
+- `shadcn`
 - `markdown-mdx`
 - `deep-learning`
 - `jax-equinox`
