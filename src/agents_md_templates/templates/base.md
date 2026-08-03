@@ -5,7 +5,7 @@
 - Address problems at the root cause, rather than patching over the symptoms.
 
 ## Files
-- Before attempting to remove or modify a file/folder, check its file permissions. Furthermore, verify that its containing filesystem is writable: `target="$(readlink -f -- <path>)"; findmnt -no OPTIONS --target "$target"`. If the comma-separated mount options contain ro, treat the filesystem as read-only and do not attempt the edit. Report the limitation instead.
+- Before attempting to remove or modify a file/folder, check its file permissions. Furthermore, verify that its effective containing filesystem is writable: `target="$(readlink -f -- <path>)"; findmnt -no OPTIONS --target "$target" | tail -n 1`. `findmnt` can report multiple stacked mounts from outermost to innermost, so only the last line governs access to the target. If those comma-separated mount options contain `ro`, treat the filesystem as read-only and do not attempt the edit. An outer mount being `ro` does not override an inner mount being `rw`; in that case the target is on a writable filesystem, subject to its normal file permissions. Report a genuine read-only limitation instead of attempting the edit.
     - For a file that does not yet exist, run the check against its nearest existing parent directory.
 - Do not try to remove or edit read-only files and folders.
 
