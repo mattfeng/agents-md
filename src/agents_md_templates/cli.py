@@ -28,6 +28,7 @@ TEMPLATE_HIERARCHY = (
             "python",
             "fastapi",
             "sqlalchemy-alembic",
+            "css",
             "nextjs",
             "shadcn",
             "markdown-mdx",

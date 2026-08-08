@@ -36,6 +36,7 @@ Available bundled templates:
 - `python`
 - `fastapi`
 - `sqlalchemy-alembic`
+- `css`
 - `nextjs`
 - `shadcn`
 - `markdown-mdx`
