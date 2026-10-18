@@ -1,5 +1,8 @@
 # Deep learning
 
+## Minimalism
+- Implementations should prioritize minimalism and using few dependencies. The stack that should always be used is JAX, Equinox, einops, jaxtyping, grain, and tqdm.
+
 ## Experiment discipline
 - Keep data preprocessing, model architecture, loss functions, optimizer settings, and evaluation metrics explicit and reproducible.
 - Do not change random seeds, dataset splits, precision settings, or augmentation policy while also changing model logic unless the user asks for a broad experiment.
