@@ -1,5 +1,15 @@
 # Base instructions
 
+## Documentation policy
+- Do not modify README.md unless explicitly requested or essential to document a user-facing change.
+- Keep README.md short, factual, and focused on installation, usage, and essential project information.
+- Never append implementation logs, progress summaries, debugging notes, speculative features, or task histories.
+- Put detailed technical documentation in docs/.
+- Put agent instructions in AGENTS.md.
+- Prefer deleting outdated content over accumulating additions.
+- Before editing README.md, verify that the information is accurate, necessary, and unavailable elsewhere.
+- Preserve the existing structure and writing style.
+
 ## Planning
 - Always prefer to construct general solutions that can be proven to work in all the expected cases, rather than implementing a series of "hacks" or special cases. Always be suspicious when something appears to require special cases.
 - Address problems at the root cause, rather than patching over the symptoms.
