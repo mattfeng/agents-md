@@ -3,6 +3,21 @@
 ## Minimalism
 - Implementations should prioritize minimalism and using few dependencies. The stack that should always be used is JAX, Equinox, einops, optax, jaxtyping, grain, and tqdm.
 
+## Python environment
+
+- Use `uv` exclusively for Python dependencies and environments.
+- Maintain dependencies in `pyproject.toml`; commit `uv.lock`.
+- Support macOS (CPU) and Linux (CPU or NVIDIA CUDA GPU).
+- Use Python 3.11+.
+- Include `jax` and `equinox` as base dependencies.
+- Provide CUDA support through a Linux-only optional extra:
+  `[project.optional-dependencies] cuda = ["jax[cuda13]; sys_platform == 'linux'"]`
+- Never require CUDA for the default installation or macOS.
+- Let JAX resolve compatible `jaxlib` and CUDA packages.
+- Use `uv sync` for CPU and `uv sync --extra cuda` for Linux CUDA.
+- Use matching `uv run` commands (with `--extra cuda` when needed).
+- Verify installations with `jax.devices()` and an Equinox import.
+
 ## Experiment discipline
 - Keep data preprocessing, model architecture, loss functions, optimizer settings, and evaluation metrics explicit and reproducible.
 - Do not change random seeds, dataset splits, precision settings, or augmentation policy while also changing model logic unless the user asks for a broad experiment.

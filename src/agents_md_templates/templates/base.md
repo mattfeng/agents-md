@@ -9,6 +9,7 @@
 - Prefer deleting outdated content over accumulating additions.
 - Before editing README.md, verify that the information is accurate, necessary, and unavailable elsewhere.
 - Preserve the existing structure and writing style.
+- Long lines/paragraphs are allowed. Do not use hard breaks to control line width when writing documentation into Markdown files.
 
 ## Planning
 - Always prefer to construct general solutions that can be proven to work in all the expected cases, rather than implementing a series of "hacks" or special cases. Always be suspicious when something appears to require special cases.
