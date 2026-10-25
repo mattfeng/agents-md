@@ -14,6 +14,7 @@
 ## Planning
 - Always prefer to construct general solutions that can be proven to work in all the expected cases, rather than implementing a series of "hacks" or special cases. Always be suspicious when something appears to require special cases.
 - Address problems at the root cause, rather than patching over the symptoms.
+- Before adding complexity for a speculative or vanishingly unlikely race or security edge case, explain the concrete failure mode, likelihood, and complexity cost to the user and get their buy-in. Do not silently expand scope for theoretical robustness.
 
 ## Files
 - Before attempting to remove or modify a file/folder, check its file permissions. Furthermore, verify that its effective containing filesystem is writable: `target="$(readlink -f -- <path>)"; findmnt -no OPTIONS --target "$target" | tail -n 1`. `findmnt` can report multiple stacked mounts from outermost to innermost, so only the last line governs access to the target. If those comma-separated mount options contain `ro`, treat the filesystem as read-only and do not attempt the edit. An outer mount being `ro` does not override an inner mount being `rw`; in that case the target is on a writable filesystem, subject to its normal file permissions. Report a genuine read-only limitation instead of attempting the edit.
